@@ -4,7 +4,7 @@
   "description": "Packages bedrock apps in native WebViews",
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
-    "reset-app-manifests": "echo \"Error: no test specified\" && exit 1"
+    "set-app-manifests": "./set-native-app-manifests.sh
   },
   "repository": {
     "type": "git",

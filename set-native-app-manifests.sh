@@ -1,3 +1,5 @@
+#!/bin/sh -e
+
 # you will need 4 env variables for this script
 # export NATIVE_APP_URL which is the server url
 # export NATIVE_APP_DOMAIN which is the root domain with no subdomains
