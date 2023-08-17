@@ -133,7 +133,7 @@ npm run set-app-manifests
 
 Alternatively you can run:
 ```
-bash set-native-app-manifests.sh 
+bash ./scripts/set-native-app-manifests.sh 
 ```
 
 
