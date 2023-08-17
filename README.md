@@ -113,6 +113,7 @@ These projects will need subtle modifications in order to work with Service Work
 and allow external sites such as `authn.io` to be usable in a WebView.
 you will need 4 env variables for this script:
 ```
+cat native-app-config.sh
 # NATIVE_APP_URL which is the server url
 export NATIVE_APP_URL="https://myapp.mydomain.com"
 # NATIVE_APP_DOMAIN which is the root domain with no subdomains
@@ -122,6 +123,8 @@ export NATIVE_APP_ID="com.mydomain.native.app"
 # NATIVE_APP_NAME The name of the app as a string
 export NATIVE_APP_NAME="My Native App"
 ```
+
+You can store them in this repo in a file named `native-app-config.sh` if you wish.
 
 Once those variables are set you can run this:
 ```

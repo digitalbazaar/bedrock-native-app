@@ -4,7 +4,7 @@
   "description": "Packages bedrock apps in native WebViews",
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
-    "set-app-manifests": "./set-native-app-manifests.sh
+    "set-app-manifests": "source ./native-app-config.sh && ./set-native-app-manifests.sh
   },
   "repository": {
     "type": "git",
