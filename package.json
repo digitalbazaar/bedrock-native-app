@@ -1,0 +1,30 @@
+{
+  "name": "bedrock-native-wallet",
+  "version": "1.0.0",
+  "description": "Packages bedrock apps in native WebViews",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "scripts": {
+    "reset-app-manifests": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/bedrock-native-wallet"
+  },
+  "dependencies": {
+    "@capacitor/android": "^4.6.3",
+    "@capacitor/app": "^4.1.1",
+    "@capacitor/cli": "^4.6.3",
+    "@capacitor/core": "^4.6.3",
+    "@capacitor/ios": "^4.6.3"
+  },
+  "keywords": [
+    "Bedrock",
+    "Native",
+    "App"
+  ],
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "https://digitalbazaar.com/"
+  }
+}
