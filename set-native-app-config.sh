@@ -54,7 +54,7 @@ printf '<?xml version="1.0" encoding="utf-8"?>
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
-</manifest>' $NATIVE_APP_URL > ./persistent-android-files/app/src/main/AndroidManifest.xml
+</manifest>' $NATIVE_APP_URL > ./android/app/src/main/AndroidManifest.xml
 
 echo "Creating iOS App.entitlements for $NATIVE_APP_URL"
 printf '<?xml version="1.0" encoding="UTF-8"?>
@@ -67,7 +67,7 @@ printf '<?xml version="1.0" encoding="UTF-8"?>
 		<string>applinks:%s</string>
 	</array>
 </dict>
-</plist>' $NATIVE_APP_URL > ./persistent-ios-files/App/App/App.entitlements
+</plist>' $NATIVE_APP_URL > ./ios/App/App/App.entitlements
 
 echo "Creating iOS Info.plist for $NATIVE_APP_URL"
 printf '<?xml version="1.0" encoding="UTF-8"?>
@@ -127,7 +127,7 @@ printf '<?xml version="1.0" encoding="UTF-8"?>
 		<string>%s</string>
 	</array>
 </dict>
-</plist>' $NATIVE_APP_URL > ./persistent-ios-files/App/App/Info.plist
+</plist>' $NATIVE_APP_URL > ./ios/App/App/Info.plist
 
 echo "Creating capacitor.config.json from $NATIVE_APP_URL"
 printf '{
