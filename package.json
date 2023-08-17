@@ -5,7 +5,7 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
     "create-capacitor-config": "source ./native-app-config.sh && ./scripts/set-capacitor-config.sh",
-    "patch-android-app": "cp -r ./AndroidPlugins ./android"
+    "patch-android-app": "cp -r ./AndroidPlugins ./android",
     "set-app-manifests": "source ./native-app-config.sh && ./scripts/set-native-app-manifests.sh"
   },
   "repository": {
