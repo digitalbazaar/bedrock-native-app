@@ -120,7 +120,7 @@ export NATIVE_APP_URL="https://myapp.mydomain.com"
 export NATIVE_APP_DOMAIN="mydomain.com"
 # NATIVE_APP_ID A java namespace for the app and app id
 export NATIVE_APP_ID="com.mydomain.native.app"
-# NATIVE_APP_NAME The name of the app as a string
+# NATIVE_APP_NAME The name of the app as kebab case string (no spaces)
 export NATIVE_APP_NAME="My Native App"
 ```
 
