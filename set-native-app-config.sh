@@ -2,7 +2,7 @@ echo "Creating AndroidManifest.xml for $NATIVE_APP_URL"
 
 printf '<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.veres.wallet">
+    package="com.digitalbazaar.native">
 
     <application
         android:allowBackup="true"
@@ -14,7 +14,7 @@ printf '<?xml version="1.0" encoding="utf-8"?>
 
         <activity
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-            android:name="io.veres.wallet.MainActivity"
+            android:name="com.digitalbazaar.native.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBarLaunch"
             android:launchMode="singleTask"
@@ -77,7 +77,7 @@ printf '<?xml version="1.0" encoding="UTF-8"?>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>veres-wallet-mobile</string>
+	<string>bedrock-native-app</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict/>
@@ -131,8 +131,8 @@ printf '<?xml version="1.0" encoding="UTF-8"?>
 
 echo "Creating capacitor.config.json from $NATIVE_APP_URL"
 printf '{
-  "appId": "io.veres.wallet",
-  "appName": "veres-wallet-mobile",
+  "appId": "com.digitalbazaar.native",
+  "appName": "bedrock-native-app",
   "bundledWebRuntime": false,
   "webDir": "./www",
   "loggingBehavior": "debug",
