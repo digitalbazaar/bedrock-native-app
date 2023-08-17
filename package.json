@@ -4,6 +4,7 @@
   "description": "Packages bedrock apps in native WebViews",
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
+    "create-capacitor-config": "source ./native-app-config.sh && ./set-capacitor-config.sh",
     "set-app-manifests": "source ./native-app-config.sh && ./set-native-app-manifests.sh"
   },
   "repository": {

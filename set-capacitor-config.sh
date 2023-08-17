@@ -1,3 +1,5 @@
+#!/bin/sh -e
+
 echo "Creating capacitor.config.json from $NATIVE_APP_URL"
 printf '{
   "appId": "%s",
