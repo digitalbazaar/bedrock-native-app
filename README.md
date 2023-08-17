@@ -111,6 +111,28 @@ npx cap sync
 
 These projects will need subtle modifications in order to work with Service Workers,
 and allow external sites such as `authn.io` to be usable in a WebView.
+you will need 4 env variables for this script:
+```
+# NATIVE_APP_URL which is the server url
+export NATIVE_APP_URL="https://myapp.mydomain.com"
+# NATIVE_APP_DOMAIN which is the root domain with no subdomains
+export NATIVE_APP_DOMAIN="mydomain.com"
+# NATIVE_APP_ID A java namespace for the app and app id
+export NATIVE_APP_ID="com.mydomain.native.app"
+# NATIVE_APP_NAME The name of the app as a string
+export NATIVE_APP_NAME="My Native App"
+```
+
+Once those variables are set you can run this:
+```
+npm run set-app-manifests
+```
+
+Alternatively you can run:
+```
+bash set-native-app-manifests.sh 
+```
+
 
 ## Usage
 Bedrock Native Wallet uses [Capacitor.js](https://capacitorjs.com/docs/) for the native app.

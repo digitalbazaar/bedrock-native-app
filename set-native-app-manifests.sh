@@ -1,8 +1,16 @@
+# you will need 4 env variables for this script
+# export NATIVE_APP_URL which is the server url
+# export NATIVE_APP_DOMAIN which is the root domain with no subdomains
+# export NATIVE_APP_ID A java namespace for the app and app id
+# export NATIVE_APP_NAME The name of the app as a string
+export NATIVE_APP_ID="${NATIVE_APP_ID:-"com.digitalbazaar.native"}"
+export NATIVE_APP_NAME="${NATIVE_APP_NAME:-"bedrock-native-app"}"
+
 echo "Creating AndroidManifest.xml for $NATIVE_APP_URL"
 
 printf '<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.digitalbazaar.native">
+    package="%s">
 
     <application
         android:allowBackup="true"
@@ -14,7 +22,7 @@ printf '<?xml version="1.0" encoding="utf-8"?>
 
         <activity
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-            android:name="com.digitalbazaar.native.MainActivity"
+            android:name="%s.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBarLaunch"
             android:launchMode="singleTask"
@@ -54,7 +62,7 @@ printf '<?xml version="1.0" encoding="utf-8"?>
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
-</manifest>' $NATIVE_APP_URL > ./android/app/src/main/AndroidManifest.xml
+</manifest>' $NATIVE_APP_ID $NATIVE_APP_ID $NATIVE_APP_URL > ./android/app/src/main/AndroidManifest.xml
 
 echo "Creating iOS App.entitlements for $NATIVE_APP_URL"
 printf '<?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +71,11 @@ printf '<?xml version="1.0" encoding="UTF-8"?>
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:*.ngrok.app</string>
+		<string>applinks:*.%s</string>
 		<string>applinks:%s</string>
 	</array>
 </dict>
-</plist>' $NATIVE_APP_URL > ./ios/App/App/App.entitlements
+</plist>' $NATIVE_APP_DOMAIN $NATIVE_APP_URL > ./ios/App/App/App.entitlements
 
 echo "Creating iOS Info.plist for $NATIVE_APP_URL"
 printf '<?xml version="1.0" encoding="UTF-8"?>
@@ -131,8 +139,8 @@ printf '<?xml version="1.0" encoding="UTF-8"?>
 
 echo "Creating capacitor.config.json from $NATIVE_APP_URL"
 printf '{
-  "appId": "com.digitalbazaar.native",
-  "appName": "bedrock-native-app",
+  "appId": "%s",
+  "appName": "%s",
   "bundledWebRuntime": false,
   "webDir": "./www",
   "loggingBehavior": "debug",
@@ -155,6 +163,6 @@ printf '{
       "enabled": false
     }
   }
-}' $NATIVE_APP_URL $NATIVE_APP_URL > ./capacitor.config.json
+}' $NATIVE_APP_ID $NATIVE_APP_NAME $NATIVE_APP_URL $NATIVE_APP_URL > ./capacitor.config.json
 
 echo "You might need to clean and rebuild to get the new manifests working in android and iOS."
