@@ -68,10 +68,11 @@ You will then need to create an emulator that matches that SDK version from Tool
 For the most part iOS is prettty straight forward provided you have XCode and XCode command line tools.
 If you have issues with xcodebuild:
 
-"""
+```
 [error] xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory
         '/Library/Developer/CommandLineTools' is a command line tools instance
-"""
+
+```
 
 You need to select an Xcode version.
 
@@ -85,8 +86,7 @@ Quite often the XCode installed on upgrade is incompatible wih Capacitor and wil
 an older version of XCode in order for Capacitor to work.
 
 Build environemtns change with each version of Capacitor and as Mobile development
-frameworks update. Below are some links to help with setup. Capacitor's list of 
-supported platforms is [here](https://capacitorjs.com/docs/getting-started/faqs#official-platforms).
+frameworks update. Capacitor's list of  supported platforms is [here](https://capacitorjs.com/docs/getting-started/faqs#official-platforms).
 
 
 ### Adding an Android or iOS project
@@ -96,7 +96,7 @@ To add a new Android project:
 npx cap add android
 ```
 
-To add a new iOs project:
+To add a new iOS project:
 ```
 npx cap add ios
 ```
