@@ -1,6 +1,4 @@
 # bedrock-native-app
-=======
-# bedrock-native-wallet
 Capacitor wrapper for Bedrock Web Apps as Native WebViews
 
 ## Table of Contents

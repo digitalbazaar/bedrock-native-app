@@ -1,5 +1,5 @@
 {
-  "name": "bedrock-native-wallet",
+  "name": "bedrock-native-app",
   "version": "1.0.0",
   "description": "Packages bedrock apps in native WebViews",
   "license": "SEE LICENSE IN LICENSE.md",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/digitalbazaar/bedrock-native-wallet"
+    "url": "https://github.com/digitalbazaar/bedrock-native-app"
   },
   "dependencies": {
     "@capacitor/android": "^4.6.3",
