@@ -136,6 +136,64 @@ Alternatively you can run:
 bash ./scripts/set-native-app-manifests.sh 
 ```
 
+### Bedrock / Server for Deep Links
+In order to support deep links that open your application you will need to serve two json files
+from your web app. Both of those files are served from the `/.well-known` route.
+
+[Capacitor's App Links docs are recommended and here](https://capacitorjs.com/docs/guides/deep-links)
+[Android App Links docs are here](https://developer.android.com/training/app-links/verify-android-applinks#multi-site)
+[iOS Universal Links docs are here](https://developer.apple.com/documentation/xcode/supporting-associated-domains?language=objc)
+
+Associated domains and app intents should be handled by the `set-app-manifests` command.
+All you need to do is create the `apple-app-site-association` and `assetlinks.json` files.
+A single site apple site association file will look like this:
+```
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "APPLE-APP-DEVELOPER-SECRET.com.digitalbazaar.native",
+        "paths": ["/native-app/*"]
+      }
+    ]
+  }
+}
+```
+A simple one site `assetlinks.json` file will look like this:
+```
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.digitalbazaar.native",
+               "sha256_cert_fingerprints": ["ANDROID-APP-HASH"] }
+}]
+```
+You will also need to modify your web application using the capacitor plugin `@capacitor/app`.
+
+```js
+// require capacitor core so it registers
+import '@capacitor/core';
+import {App} from '@capacitor/app';
+ 
+export function forwardNativeAppLinks() {
+  App.addListener('appUrlOpen', function(event) {
+    // the event can be null so ?. is better
+    const url = event?.url;
+    // if the event has no url just return
+    if(!url) {
+      return;
+    }
+    // get the origin
+    const {origin} = new URL(url);
+    // remove the origin and the /native-app from it
+    const path = event.url.replace(origin + '/native-app', '');
+    // if there is a path go to it
+    if(path) {
+      window.location.href = path;
+    }
+  });
+}
+```
 
 ## Usage
 Bedrock Native Wallet uses [Capacitor.js](https://capacitorjs.com/docs/) for the native app.
