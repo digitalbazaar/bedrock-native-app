@@ -6,6 +6,7 @@
 .project
 .settings
 .vscode
+capacitor.config.json
 TAGS
 coverage
 node_modules
