@@ -12,6 +12,6 @@ TAGS
 coverage
 node_modules
 android
-www
+www/**
 ios
 !.gitkeep
