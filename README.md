@@ -119,9 +119,10 @@ export NATIVE_APP_URL="https://myapp.mydomain.com"
 # NATIVE_APP_DOMAIN which is the root domain with no subdomains
 export NATIVE_APP_DOMAIN="mydomain.com"
 # NATIVE_APP_ID A java namespace for the app and app id
-export NATIVE_APP_ID="com.mydomain.native.app"
+# note native is a reserved keyword in java
+export NATIVE_APP_ID="com.mydomain.mobile.app"
 # NATIVE_APP_NAME The name of the app as kebab case string (no spaces)
-export NATIVE_APP_NAME="My Native App"
+export NATIVE_APP_NAME="my-mobile-app"
 ```
 
 The env variables can be stored in this repo in a file named `native-app-config.sh`.
@@ -129,11 +130,6 @@ The env variables can be stored in this repo in a file named `native-app-config.
 Once those variables are set run this:
 ```
 npm run set-app-manifests
-```
-
-or alternatively:
-```
-bash ./scripts/set-native-app-manifests.sh 
 ```
 
 ### Bedrock / Server for Deep Links
@@ -154,7 +150,7 @@ A single site apple site association file will look like this:
     "apps": [],
     "details": [
       {
-        "appID": "APPLE-APP-DEVELOPER-SECRET.com.digitalbazaar.native",
+        "appID": "APPLE-APP-DEVELOPER-SECRET.com.digitalbazaar.mobile.app",
         "paths": ["/native-app/*"]
       }
     ]
@@ -165,7 +161,7 @@ A simple one site `assetlinks.json` file will look like this:
 ```
 [{
   "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { "namespace": "android_app", "package_name": "com.digitalbazaar.native",
+  "target" : { "namespace": "android_app", "package_name": "com.digitalbazaar.mobile.app",
                "sha256_cert_fingerprints": ["ANDROID-APP-HASH"] }
 }]
 ```
