@@ -1,6 +1,9 @@
 #!/bin/sh -e
 
-printf "%s;
+# the app path is the java namespace
+nativeAppPath=$(echo "app/src/main/java/$NATIVE_APP_ID" | sed 's/\./\//g')
+
+printf "package %s;
 
 import android.os.Build;
 import android.webkit.WebResourceResponse;
@@ -19,7 +22,7 @@ import com.getcapacitor.annotation.CapacitorPlugin;
  * This solves an issue where Capacitor's javascript injection conflicts or is delayed
  * by a ServiceWorker.
  */
-@CapacitorPlugin(name = "ServiceWorker")
+@CapacitorPlugin(name = \"ServiceWorker\")
 public class ServiceWorker extends Plugin {
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -33,9 +36,9 @@ public class ServiceWorker extends Plugin {
             }
         });
     }
-}" $NATIVE_APP_ID
+}" $NATIVE_APP_ID > "./android/$nativeAppPath/ServiceWorker.java"
 
-printf "%s;
+printf "package %s;
 
 import com.getcapacitor.BridgeActivity;
 import android.os.Bundle;
@@ -47,4 +50,4 @@ public class MainActivity extends BridgeActivity {
         super.onCreate(savedInstanceState);
     }
 }
-" $NATIVE_APP_ID
+" $NATIVE_APP_ID > "./android/$nativeAppPath/MainActivity.java"
