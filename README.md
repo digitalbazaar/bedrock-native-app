@@ -20,9 +20,9 @@ npm i
 ```
 
 ### Android
-Capacitor provides iOS Setup instructions [here](https://capacitorjs.com/docs/getting-started/environment-setup#ios-requirements)
+Capacitor provides iOS Setup instructions [here.](https://capacitorjs.com/docs/getting-started/environment-setup#ios-requirements)
 
-You will need:
+Libraries:
 - SdkMan *optional* (mostly for gradle)
 - Android Studio *required*
 
@@ -30,7 +30,7 @@ You will need:
 
 Capacitor provides instructions [here.](https://capacitorjs.com/docs/getting-started/environment-setup#homebrew)
 
-In total you will need:
+Libraries:
 - MacOs *required*
 - Brew *optional* (most popular package manager on MacOs)
 - Cocopods *required* (installed via Brew)
@@ -54,38 +54,37 @@ Capacitor has a large number of commands that can be used.
 
 ### Android
 Capacitor needs several tools installed that don't necessarily come installed with Android Studio.
-In Android Studio you can use either Preferences or Tools -> SDK Manager.
-You will need to click on `SDK Tools` and then install `Android SDK Build Tools`, `Android SDK Command Line Tools`,
-and `Android SDK Platform tools`. You might need to click on those items and install older versions of them.
+In Android Studio use either Preferences or Tools -> SDK Manager.
+Click on `SDK Tools` and then install `Android SDK Build Tools`, `Android SDK Command Line Tools`,
+and `Android SDK Platform tools`. Check the version of those tools the installed versioned of Capacitor requires.
 
-You will need to copy the `Android SDK Location` from SDK Manager and use it as an environment variable called: `ANDROID_SDK_ROOT`
-Then you will need to call `source setup-build-env.sh` to ensure the android command line tools etc are in your path.
+Copy the `Android SDK Location` from SDK Manager and use it as an environment variable called: `ANDROID_SDK_ROOT`
+Call `source ./scripts/setup-build-env.sh` to ensure the android command line tools etc are in `$PATH`.
 
 Capacitor and the latest version of Android Studio might not be compatible.
-If this is the case you will need to install an older version of Android SDK and an emulator.
+To add support for older Android versions install an older version of Android SDK and an emulator.
+Access SDK versions from preferences or use Tools -> SDK Manager to manage SDK versions.
+Create an emulator that matches that SDK version from Tools -> Device Manager.
 [Capacitor provides these SDK setup docs](https://capacitorjs.com/docs/getting-started/environment-setup#android-sdk)
-You can access SDK versions from preferences or use Tools -> SDK Manager to manage SDK versions.
-You will then need to create an emulator that matches that SDK version from Tools -> Device Manager.
 
 ### iOS
-For the most part iOS is prettty straight forward provided you have XCode and XCode command line tools.
-If you have issues with xcodebuild:
+For the most part iOS is prettty straight forward provided XCode and XCode command line tools are installed.
+If xcodebuild throws this error:
 
 ```
 [error] xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory
         '/Library/Developer/CommandLineTools' is a command line tools instance
-
 ```
 
-You need to select an Xcode version.
+Select an Xcode version.
 
-Determine where your desired `Xcode.app` is installed and replace the path below with it. 
+Determine where the needed version of `Xcode.app` is installed and replace the path below with it. 
 ```sh
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
 
 That will set the xcode version to a different version (this is usually an older version of XCode).
-Quite often the XCode installed on upgrade is incompatible wih Capacitor and will require you to select
+Quite often the XCode installed on upgrade is incompatible wih Capacitor and will require selecting
 an older version of XCode in order for Capacitor to work.
 
 Build environemtns change with each version of Capacitor and as Mobile development
@@ -104,7 +103,7 @@ To add a new iOS project:
 npx cap add ios
 ```
 
-These projects need various plugins in them so you will need to do a sync:
+These projects need various plugins in them provided by a sync:
 
 ```
 npx cap sync
@@ -112,7 +111,7 @@ npx cap sync
 
 These projects will need subtle modifications in order to work with Service Workers,
 and allow external sites such as `authn.io` to be usable in a WebView.
-you will need 4 env variables for this script:
+4 env variables are needed for this script:
 ```
 cat native-app-config.sh
 # NATIVE_APP_URL which is the server url
@@ -125,28 +124,29 @@ export NATIVE_APP_ID="com.mydomain.native.app"
 export NATIVE_APP_NAME="My Native App"
 ```
 
-You can store them in this repo in a file named `native-app-config.sh` if you wish.
+The env variables can be stored in this repo in a file named `native-app-config.sh`.
 
-Once those variables are set you can run this:
+Once those variables are set run this:
 ```
 npm run set-app-manifests
 ```
 
-Alternatively you can run:
+or alternatively:
 ```
 bash ./scripts/set-native-app-manifests.sh 
 ```
 
 ### Bedrock / Server for Deep Links
-In order to support deep links that open your application you will need to serve two json files
-from your web app. Both of those files are served from the `/.well-known` route.
+In order to support deep links that open the application the server will need to serve two json files.
+Both of those files are served from the `/.well-known` route.
 
 [Capacitor's App Links docs are recommended and here](https://capacitorjs.com/docs/guides/deep-links)
 [Android App Links docs are here](https://developer.android.com/training/app-links/verify-android-applinks#multi-site)
 [iOS Universal Links docs are here](https://developer.apple.com/documentation/xcode/supporting-associated-domains?language=objc)
 
 Associated domains and app intents should be handled by the `set-app-manifests` command.
-All you need to do is create the `apple-app-site-association` and `assetlinks.json` files.
+Create the `apple-app-site-association` and `assetlinks.json` files using the docs above.
+For iOS the app must be linked to an apple developer account inside of XCode.
 A single site apple site association file will look like this:
 ```
 {
@@ -169,7 +169,7 @@ A simple one site `assetlinks.json` file will look like this:
                "sha256_cert_fingerprints": ["ANDROID-APP-HASH"] }
 }]
 ```
-You will also need to modify your web application using the capacitor plugin `@capacitor/app`.
+The web application should use the capacitor plugin `@capacitor/app`.
 
 ```js
 // require capacitor core so it registers
