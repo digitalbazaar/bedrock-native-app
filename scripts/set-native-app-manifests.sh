@@ -5,8 +5,9 @@
 # export NATIVE_APP_DOMAIN which is the root domain with no subdomains
 # export NATIVE_APP_ID A java namespace for the app and app id
 # export NATIVE_APP_NAME The name of the app as a string
-export NATIVE_APP_ID="${NATIVE_APP_ID:-"com.digitalbazaar.native"}"
-export NATIVE_APP_NAME="${NATIVE_APP_NAME:-"bedrock-native-app"}"
+# note native is a reserved keyword in java
+export NATIVE_APP_ID="${NATIVE_APP_ID:-"com.digitalbazaar.mobile.app"}"
+export NATIVE_APP_NAME="${NATIVE_APP_NAME:-"bedrock-mobile-app"}"
 
 echo "Creating AndroidManifest.xml for $NATIVE_APP_URL"
 
