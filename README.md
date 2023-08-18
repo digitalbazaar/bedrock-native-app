@@ -20,20 +20,23 @@ npm i
 ```
 
 ### Android
-- SdkMan (mostly for gradle)
-- Android Studio
+Capacitor provides iOS Setup instructions [here](https://capacitorjs.com/docs/getting-started/environment-setup#ios-requirements)
+
+You will need:
+- SdkMan *optional* (mostly for gradle)
+- Android Studio *required*
 
 ### iOS
 
 Capacitor provides instructions [here.](https://capacitorjs.com/docs/getting-started/environment-setup#homebrew)
 
 In total you will need:
-- MacOs
-- Brew
-- Cocopods (installed via Brew)
+- MacOs *required*
+- Brew *optional* (most popular package manager on MacOs)
+- Cocopods *required* (installed via Brew)
 - [Xcodes](https://github.com/RobotsAndPencils/xcodes) or
-    - Xcode
-    - Xcode Command Line Tools
+    - Xcode *required*
+    - Xcode Command Line Tools *required*
 
 If brew fails to install:
 
