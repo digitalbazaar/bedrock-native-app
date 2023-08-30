@@ -81,9 +81,18 @@ printf '<?xml version="1.0" encoding="UTF-8"?>
 </plist>' $NATIVE_APP_DOMAIN $NATIVE_APP_URL > ./ios/App/App/App.entitlements
 
 echo "Creating iOS Info.plist for $NATIVE_APP_URL"
-printf '<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
+APP_BOUND_DOMAINS="";
+if [ "$NATIVE_APP_DOMAINS" ]; then
+  for value in $NATIVE_APP_DOMAINS; do
+    APP_BOUND_DOMAINS="$APP_BOUND_DOMAINS<string>${value}</string>\n\t\t"
+  done
+fi
+# remove trailing newline and tabs
+APP_BOUND_DOMAINS=$(sed 's/\\n\\t\\t$//g' <<< "$APP_BOUND_DOMAINS");
+
+echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
@@ -94,19 +103,19 @@ printf '<?xml version="1.0" encoding="UTF-8"?>
 		<dict/>
 	</array>
 	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
+	<string>\$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>\$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>\$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>$(MARKETING_VERSION)</string>
+	<string>\$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<string>\$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -134,10 +143,9 @@ printf '<?xml version="1.0" encoding="UTF-8"?>
 	<true/>
 	<key>WKAppBoundDomains</key>
 	<array>
-		<string>authn.io</string>
-		<string>%s</string>
+		$APP_BOUND_DOMAINS
 	</array>
 </dict>
-</plist>' $NATIVE_APP_URL > ./ios/App/App/Info.plist
+</plist>" > ./ios/App/App/Info.plist
 
 echo "You might need to clean and rebuild to get the new manifests working in android and iOS."
