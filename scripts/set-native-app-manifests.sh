@@ -96,7 +96,7 @@ echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <plist version=\"1.0\">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>This app uses the camera to verify your id.</string>
+	<string>This app uses the camera for specific actions you initiate, such as verifying your identity.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
