@@ -61,9 +61,10 @@ printf '<?xml version="1.0" encoding="utf-8"?>
                 android:resource="@xml/file_paths"></meta-data>
         </provider>
     </application>
-
+    <!-- Features -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
     <!-- Permissions -->
-
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>' $NATIVE_APP_ID $NATIVE_APP_ID $NATIVE_APP_URL > ./android/app/src/main/AndroidManifest.xml
 
