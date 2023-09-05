@@ -58,7 +58,7 @@ printf '<?xml version="1.0" encoding="utf-8"?>
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
     </application>
     <!-- Features -->
