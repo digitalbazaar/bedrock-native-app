@@ -6,7 +6,8 @@
   "scripts": {
     "create-capacitor-config": "source ./native-app-config.sh && ./scripts/set-capacitor-config.sh",
     "set-app-manifests": "source ./native-app-config.sh && ./scripts/set-native-app-manifests.sh",
-    "set-build-env": "source ./scripts/setup-build-env.sh"
+    "set-build-env": "source ./scripts/setup-build-env.sh",
+    "generate-app-icons": "npx capacitor-assets generate"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,8 @@
     "name": "Digital Bazaar, Inc.",
     "email": "support@digitalbazaar.com",
     "url": "https://digitalbazaar.com/"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^2.0.4"
   }
 }
