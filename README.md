@@ -198,7 +198,9 @@ export function forwardNativeAppLinks() {
 
 ### App Icons and Splash Screens
 Are managed by `@capacitor/assets`. [Docs for the assets tool are here.](https://capacitorjs.com/docs/guides/splash-screens-and-icons)
+
 Assests for icons and Splash Screens go into the `/resources` dir.
+
 To add an App Icon set `resources/icon-only.png` & then `npm run generate-app-icons`
 
 ## Usage
