@@ -13,5 +13,6 @@ coverage
 node_modules
 android
 www/**
+resources/**
 ios
 !.gitkeep
