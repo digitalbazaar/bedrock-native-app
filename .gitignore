@@ -14,5 +14,6 @@ node_modules
 android
 www/**
 resources/**
+icons/
 ios
 !.gitkeep
