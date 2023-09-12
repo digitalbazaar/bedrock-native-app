@@ -100,7 +100,7 @@ echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>bedrock-native-app</string>
+	<string>$NATIVE_APP_NAME</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict/>
