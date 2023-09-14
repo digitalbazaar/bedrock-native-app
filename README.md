@@ -201,7 +201,14 @@ Are managed by `@capacitor/assets`. [Docs for the assets tool are here.](https:/
 
 Assests for icons and Splash Screens go into the `/resources` dir.
 
-To add an App Icon set `resources/icon-only.png` & then `npm run generate-app-icons`
+To add an App Icon set:
+- `resources/icon-only.png`
+- `resources/icon-foreground.png`
+  - required by Android
+- `resources/icon-background.png`
+  - required by Android
+
+& then `npm run generate-app-icons`
 
 ## Usage
 Bedrock Native Wallet uses [Capacitor.js](https://capacitorjs.com/docs/) for the native app.
