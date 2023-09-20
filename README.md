@@ -14,7 +14,7 @@ Bedrock applications have typically not run as native apps on mobile platforms.
 This library allows that to happen.
 
 ## Install
-For this libraries dependencies:
+For this library's dependencies:
 ```
 npm i
 ```
@@ -90,34 +90,18 @@ an older version of XCode in order for Capacitor to work.
 Build environemtns change with each version of Capacitor and as Mobile development
 frameworks update. Capacitor's list of  supported platforms is [here](https://capacitorjs.com/docs/getting-started/faqs#official-platforms).
 
-
-### Adding an Android or iOS project
-
-To add a new Android project:
-```
-npx cap add android
-```
-
-To add a new iOS project:
-```
-npx cap add ios
-```
-
-These projects need various plugins in them provided by a sync:
-
-```
-npx cap sync
-```
-
+### Configuring the App
 These projects will need subtle modifications in order to work with Service Workers,
 and allow external sites such as `authn.io` to be usable in a WebView.
-4 env variables are needed for this script:
+5 env variables are needed for this script:
 ```
 cat native-app-config.sh
 # NATIVE_APP_URL which is the server url
 export NATIVE_APP_URL="https://myapp.mydomain.com"
 # NATIVE_APP_DOMAIN which is the root domain with no subdomains
 export NATIVE_APP_DOMAIN="mydomain.com"
+# list of all websites the app will load while running
+export NATIVE_APP_DOMAINS="$NATIVE_APP_URL localhost myapp.domain1.com my.trackingsite.org onboard.domain1.com dashboard.domain2.com"
 # NATIVE_APP_ID A java namespace for the app and app id
 # note native is a reserved keyword in java
 export NATIVE_APP_ID="com.mydomain.mobile.app"
@@ -125,11 +109,11 @@ export NATIVE_APP_ID="com.mydomain.mobile.app"
 export NATIVE_APP_NAME="my-mobile-app"
 ```
 
-The env variables can be stored in this repo in a file named `native-app-config.sh`.
+The env variables should be stored in this repo in a file named `native-app-config.sh`.
 
 Once those variables are set run this:
 ```
-npm run set-app-manifests
+npm run create-app
 ```
 
 ### Bedrock / Server for Deep Links
