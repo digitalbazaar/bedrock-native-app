@@ -11,3 +11,5 @@ npx cap sync
 bash ./scripts/service-worker-android-patch.sh
 # last the app manifests
 bash ./scripts/set-native-app-manifests.sh
+# generates icons and splash screens
+npx capacitor-assets generate
