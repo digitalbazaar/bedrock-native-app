@@ -77,8 +77,8 @@ That will set the xcode version to a different version (this is usually an older
 Quite often the XCode installed on upgrade is incompatible wih Capacitor and will require selecting
 an older version of XCode in order for Capacitor to work.
 
-Build environments change with each version of Capacitor and as Mobile development
-frameworks update. Capacitor's list of  [supported platforms](https://capacitorjs.com/docs/getting-started/faqs#official-platforms).
+Build environments change with each version of Capacitor and as Mobile development frameworks update.
+Capacitor's list of [supported platforms](https://capacitorjs.com/docs/getting-started/faqs#official-platforms).
 
 ### Configuring the App
 These projects will need subtle modifications in order to work with Service Workers,
