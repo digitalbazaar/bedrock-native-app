@@ -101,10 +101,6 @@ echo -e "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>$NATIVE_APP_NAME</string>
-	<key>CFBundleDocumentTypes</key>
-	<array>
-		<dict/>
-	</array>
 	<key>CFBundleExecutable</key>
 	<string>\$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
