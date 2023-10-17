@@ -52,6 +52,10 @@ then try to install again
 Bedrock Native Wallet uses [Capacitor.js](https://capacitorjs.com/docs/) for the native app.
 Capacitor has a large number of commands that can be used.
 
+### Error Page
+A custom HTML page to show when the app errors can be set at `./www/applicationError.html`.
+The page should be basic and will not have access to Capacitor's API.
+
 ### Android
 Capacitor needs several tools installed that don't necessarily come installed with Android Studio.
 In Android Studio use either Preferences or Tools -> SDK Manager.
