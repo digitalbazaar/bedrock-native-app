@@ -17,3 +17,4 @@ resources/**
 icons/
 ios
 !.gitkeep
+!www/applicationError.html
