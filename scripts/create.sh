@@ -13,3 +13,5 @@ bash ./scripts/service-worker-android-patch.sh
 bash ./scripts/set-native-app-manifests.sh
 # generates icons and splash screens
 npx capacitor-assets generate
+# generate a generic application error screen
+bash ./scripts/set-application-error.sh
