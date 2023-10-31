@@ -32,7 +32,7 @@ Capacitor provides instructions [here.](https://capacitorjs.com/docs/getting-sta
 
 Libraries:
 - MacOs *required*
-- Brew *optional* (most popular package manager on MacOs)
+- Brew *optional* (most popular package manager on MacOS)
 - Cocopods *required* (installed via Brew)
 - [Xcodes](https://github.com/RobotsAndPencils/xcodes) or
     - Xcode *required*
