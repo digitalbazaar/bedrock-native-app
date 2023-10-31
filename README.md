@@ -30,21 +30,12 @@ Libraries:
 Capacitor provides [iOS setup instructions](https://capacitorjs.com/docs/getting-started/environment-setup#ios-requirements).
 
 Libraries:
-- MacOs *required*
-- Brew *optional* (most popular package manager on MacOS)
-- Cocopods *required* (installed via Brew)
+- MacOS *required*
+- [Brew](https://brew.sh/) *optional* (most popular package manager on MacOS)
+- [Cocoapods](https://cocoapods.org/) *required* (can be installed via Brew)
 - [Xcodes](https://github.com/RobotsAndPencils/xcodes) or
     - Xcode *required*
     - Xcode Command Line Tools *required*
-
-If brew fails to install:
-
-```sh
-sudo rm -rf /opt/homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
-```
-then try to install again
-
 
 
 ## Setup
