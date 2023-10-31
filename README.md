@@ -20,7 +20,7 @@ npm i
 ```
 
 ### Android
-Capacitor provides iOS Setup instructions [here.](https://capacitorjs.com/docs/getting-started/environment-setup#ios-requirements)
+Capacitor provides [Android setup instructions](https://capacitorjs.com/docs/getting-started/environment-setup#android-requirements).
 
 Libraries:
 - SdkMan *optional* (mostly for gradle)
