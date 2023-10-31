@@ -14,7 +14,7 @@ Bedrock applications have typically not run as native apps on mobile platforms.
 This library allows that to happen.
 
 ## Install
-For this libraries dependencies:
+For this library's dependencies:
 ```
 npm i
 ```
