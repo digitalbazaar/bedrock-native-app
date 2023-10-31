@@ -1,0 +1,36 @@
+{
+  "name": "bedrock-native-app",
+  "version": "1.0.0",
+  "description": "Packages bedrock apps in native WebViews",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "scripts": {
+    "create-capacitor-config": "source ./native-app-config.sh && ./scripts/set-capacitor-config.sh",
+    "set-app-manifests": "source ./native-app-config.sh && ./scripts/set-native-app-manifests.sh",
+    "set-build-env": "source ./scripts/setup-build-env.sh",
+    "generate-app-icons": "npx capacitor-assets generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/bedrock-native-app"
+  },
+  "dependencies": {
+    "@capacitor/android": "^4.6.3",
+    "@capacitor/app": "^4.1.1",
+    "@capacitor/cli": "^4.6.3",
+    "@capacitor/core": "^4.6.3",
+    "@capacitor/ios": "^4.6.3"
+  },
+  "keywords": [
+    "Bedrock",
+    "Native",
+    "App"
+  ],
+  "author": {
+    "name": "Digital Bazaar, Inc.",
+    "email": "support@digitalbazaar.com",
+    "url": "https://digitalbazaar.com/"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^2.0.4"
+  }
+}
