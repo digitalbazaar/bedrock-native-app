@@ -193,7 +193,7 @@ export function forwardNativeAppLinks() {
 ```
 
 ### App Icons and Splash Screens
-Are managed by `@capacitor/assets`. [Docs for the assets tool are here.](https://capacitorjs.com/docs/guides/splash-screens-and-icons)
+Assets are managed by `@capacitor/assets`. [Docs](https://capacitorjs.com/docs/guides/splash-screens-and-icons) for the assets tool.
 
 Assests for icons and Splash Screens go into the `/resources` dir.
 
