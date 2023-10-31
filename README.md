@@ -27,8 +27,7 @@ Libraries:
 - Android Studio *required*
 
 ### iOS
-
-Capacitor provides instructions [here.](https://capacitorjs.com/docs/getting-started/environment-setup#homebrew)
+Capacitor provides [iOS setup instructions](https://capacitorjs.com/docs/getting-started/environment-setup#ios-requirements).
 
 Libraries:
 - MacOs *required*
