@@ -136,9 +136,9 @@ npm run set-app-manifests
 In order to support deep links that open the application the server will need to serve two json files.
 Both of those files are served from the `/.well-known` route.
 
-- [Capacitor's App Links docs are recommended and here](https://capacitorjs.com/docs/guides/deep-links)
-- [Android App Links docs are here](https://developer.android.com/training/app-links/verify-android-applinks#multi-site)
-- [iOS Universal Links docs are here](https://developer.apple.com/documentation/xcode/supporting-associated-domains?language=objc)
+- [Capacitor's App Links docs](https://capacitorjs.com/docs/guides/deep-links)
+- [Android App Links docs](https://developer.android.com/training/app-links/verify-android-applinks#multi-site)
+- [iOS Universal Links docs](https://developer.apple.com/documentation/xcode/supporting-associated-domains?language=objc)
 
 Associated domains and app intents should be handled by the `set-app-manifests` command.
 Create the `apple-app-site-association` and `assetlinks.json` files using the docs above.
