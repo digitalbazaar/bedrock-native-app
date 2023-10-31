@@ -88,7 +88,7 @@ Quite often the XCode installed on upgrade is incompatible wih Capacitor and wil
 an older version of XCode in order for Capacitor to work.
 
 Build environemtns change with each version of Capacitor and as Mobile development
-frameworks update. Capacitor's list of  supported platforms is [here](https://capacitorjs.com/docs/getting-started/faqs#official-platforms).
+frameworks update. Capacitor's list of  [supported platforms](https://capacitorjs.com/docs/getting-started/faqs#official-platforms).
 
 
 ### Adding an Android or iOS project
