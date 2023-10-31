@@ -204,7 +204,10 @@ To add an App Icon set:
 - `resources/icon-background.png`
   - required by Android
 
-& then `npm run generate-app-icons`
+And then run:
+```
+npm run generate-app-icons
+```
 
 ## Usage
 Bedrock Native Wallet uses [Capacitor.js](https://capacitorjs.com/docs/) for the native app.
