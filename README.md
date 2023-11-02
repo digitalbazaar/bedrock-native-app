@@ -86,8 +86,8 @@ and allow external sites such as `authn.io` to be usable in a WebView.
 5 env variables are needed for this script:
 ```
 cat native-app-config.sh
-# NATIVE_APP_URL which is the server url
-export NATIVE_APP_URL="https://myapp.mydomain.com"
+# NATIVE_APP_URL which is the server url with no protocol
+export NATIVE_APP_URL="myapp.mydomain.com"
 # NATIVE_APP_DOMAIN which is the root domain with no subdomains
 export NATIVE_APP_DOMAIN="mydomain.com"
 # list of all websites the app will load while running
@@ -95,8 +95,8 @@ export NATIVE_APP_DOMAINS="$NATIVE_APP_URL localhost myapp.domain1.com my.tracki
 # NATIVE_APP_ID A java namespace for the app and app id
 # note native is a reserved keyword in java
 export NATIVE_APP_ID="com.mydomain.mobile.app"
-# NATIVE_APP_NAME The name of the app as kebab case string (no spaces)
-export NATIVE_APP_NAME="my-mobile-app"
+# NATIVE_APP_NAME The name of the app (note: iOS will ignore spaces)
+export NATIVE_APP_NAME="My Mobile App"
 ```
 
 The env variables should be stored in this repo in a file named `native-app-config.sh`.
