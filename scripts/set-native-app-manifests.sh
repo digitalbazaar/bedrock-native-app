@@ -7,7 +7,6 @@
 # export NATIVE_APP_NAME The name of the app as a string
 # note native is a reserved keyword in java
 export NATIVE_APP_ID="${NATIVE_APP_ID:-"com.digitalbazaar.mobile.app"}"
-export NATIVE_APP_NAME="${NATIVE_APP_NAME:-"bedrock-mobile-app"}"
 
 echo "Creating AndroidManifest.xml for $NATIVE_APP_URL"
 
@@ -88,7 +87,7 @@ printf '<?xml version="1.0" encoding="UTF-8"?>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>bedrock-native-app</string>
+	<string>%s</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict/>
@@ -138,6 +137,6 @@ printf '<?xml version="1.0" encoding="UTF-8"?>
 		<string>%s</string>
 	</array>
 </dict>
-</plist>' $NATIVE_APP_URL > ./ios/App/App/Info.plist
+</plist>' "$NATIVE_APP_NAME" $NATIVE_APP_URL > ./ios/App/App/Info.plist
 
 echo "You might need to clean and rebuild to get the new manifests working in android and iOS."

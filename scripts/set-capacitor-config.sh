@@ -1,5 +1,6 @@
 #!/bin/sh -e
 
+export NATIVE_APP_NAME="${NATIVE_APP_NAME:-"bedrock-mobile-app"}"
 echo "Creating capacitor.config.json from $NATIVE_APP_URL"
 printf '{
   "appId": "%s",
@@ -26,4 +27,4 @@ printf '{
       "enabled": false
     }
   }
-}' $NATIVE_APP_ID $NATIVE_APP_NAME $NATIVE_APP_URL $NATIVE_APP_URL > ./capacitor.config.json
+}' $NATIVE_APP_ID "$NATIVE_APP_NAME" $NATIVE_APP_URL $NATIVE_APP_URL > ./capacitor.config.json
