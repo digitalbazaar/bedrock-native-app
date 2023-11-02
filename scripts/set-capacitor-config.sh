@@ -34,4 +34,4 @@ printf '{
       "enabled": false
     }
   }
-}' $NATIVE_APP_ID $NATIVE_APP_NAME $NATIVE_APP_URL "$ALLOW_NAVIGATION" > ./capacitor.config.json
+}' $NATIVE_APP_ID "$NATIVE_APP_NAME" $NATIVE_APP_URL "$ALLOW_NAVIGATION" > ./capacitor.config.json
