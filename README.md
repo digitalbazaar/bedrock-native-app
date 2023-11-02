@@ -58,7 +58,7 @@ Create an emulator that matches that SDK version from Tools -> Device Manager.
 [Capacitor provides these SDK setup docs](https://capacitorjs.com/docs/getting-started/environment-setup#android-sdk)
 
 ### iOS
-For the most part iOS is prettty straight forward provided XCode and XCode command line tools are installed.
+For the most part iOS is pretty straight forward provided XCode and XCode command line tools are installed.
 If xcodebuild throws this error:
 
 ```
@@ -77,7 +77,7 @@ That will set the xcode version to a different version (this is usually an older
 Quite often the XCode installed on upgrade is incompatible wih Capacitor and will require selecting
 an older version of XCode in order for Capacitor to work.
 
-Build enviroments change with each version of Capacitor and as Mobile development
+Build environments change with each version of Capacitor and as Mobile development
 frameworks update. Capacitor's list of  [supported platforms](https://capacitorjs.com/docs/getting-started/faqs#official-platforms).
 
 ### Configuring the App
@@ -169,7 +169,7 @@ export function forwardNativeAppLinks() {
 ### App Icons and Splash Screens
 Assets are managed by `@capacitor/assets`. [Docs](https://capacitorjs.com/docs/guides/splash-screens-and-icons) for the assets tool.
 
-Assests for icons and Splash Screens go into the `/resources` dir.
+Assets for icons and Splash Screens go into the `/resources` dir.
 
 To add an App Icon set:
 - `resources/icon-only.png`
