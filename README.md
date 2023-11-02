@@ -58,7 +58,7 @@ Create an emulator that matches that SDK version from Tools -> Device Manager.
 [Capacitor provides these SDK setup docs](https://capacitorjs.com/docs/getting-started/environment-setup#android-sdk)
 
 ### iOS
-For the most part iOS is prettty straight forward provided XCode and XCode command line tools are installed.
+For the most part iOS is pretty straight forward provided XCode and XCode command line tools are installed.
 If xcodebuild throws this error:
 
 ```
@@ -77,49 +77,33 @@ That will set the xcode version to a different version (this is usually an older
 Quite often the XCode installed on upgrade is incompatible wih Capacitor and will require selecting
 an older version of XCode in order for Capacitor to work.
 
-Build environemtns change with each version of Capacitor and as Mobile development
+Build environments change with each version of Capacitor and as Mobile development
 frameworks update. Capacitor's list of  [supported platforms](https://capacitorjs.com/docs/getting-started/faqs#official-platforms).
 
-
-### Adding an Android or iOS project
-
-To add a new Android project:
-```
-npx cap add android
-```
-
-To add a new iOS project:
-```
-npx cap add ios
-```
-
-These projects need various plugins in them provided by a sync:
-
-```
-npx cap sync
-```
-
+### Configuring the App
 These projects will need subtle modifications in order to work with Service Workers,
 and allow external sites such as `authn.io` to be usable in a WebView.
-4 env variables are needed for this script:
+5 env variables are needed for this script:
 ```
 cat native-app-config.sh
-# NATIVE_APP_URL which is the server url
-export NATIVE_APP_URL="https://myapp.mydomain.com"
+# NATIVE_APP_URL which is the server url with no protocol
+export NATIVE_APP_URL="myapp.mydomain.com"
 # NATIVE_APP_DOMAIN which is the root domain with no subdomains
 export NATIVE_APP_DOMAIN="mydomain.com"
+# list of all websites the app will load while running
+export NATIVE_APP_DOMAINS="$NATIVE_APP_URL localhost myapp.domain1.com my.trackingsite.org onboard.domain1.com dashboard.domain2.com"
 # NATIVE_APP_ID A java namespace for the app and app id
 # note native is a reserved keyword in java
 export NATIVE_APP_ID="com.mydomain.mobile.app"
-# NATIVE_APP_NAME The name of the app as kebab case string (no spaces)
-export NATIVE_APP_NAME="my-mobile-app"
+# NATIVE_APP_NAME The name of the app (note: iOS will ignore spaces)
+export NATIVE_APP_NAME="My Mobile App"
 ```
 
-The env variables can be stored in this repo in a file named `native-app-config.sh`.
+The env variables should be stored in this repo in a file named `native-app-config.sh`.
 
 Once those variables are set run this:
 ```
-npm run set-app-manifests
+npm run create-app
 ```
 
 ### Bedrock / Server for Deep Links
@@ -185,7 +169,7 @@ export function forwardNativeAppLinks() {
 ### App Icons and Splash Screens
 Assets are managed by `@capacitor/assets`. [Docs](https://capacitorjs.com/docs/guides/splash-screens-and-icons) for the assets tool.
 
-Assests for icons and Splash Screens go into the `/resources` dir.
+Assets for icons and Splash Screens go into the `/resources` dir.
 
 To add an App Icon set:
 - `resources/icon-only.png`
