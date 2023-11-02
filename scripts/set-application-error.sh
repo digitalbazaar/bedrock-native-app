@@ -30,5 +30,4 @@ printf '<html>
     <h2>You may attempt to reload the site below.</h2>
     <a href="https://%s">Reload</a>
   </body>
-</html>' $NATIVE_APP_NAME $NATIVE_APP_URL > ./www/applicationError.html
-
+</html>' "$NATIVE_APP_NAME" $NATIVE_APP_URL > ./www/applicationError.html
