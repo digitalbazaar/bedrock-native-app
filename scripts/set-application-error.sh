@@ -1,3 +1,4 @@
+if ! [ -f ./www/applicationError.html ]; then
 printf '<html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -31,3 +32,4 @@ printf '<html>
     <a href="https://%s">Reload</a>
   </body>
 </html>' "$NATIVE_APP_NAME" $NATIVE_APP_URL > ./www/applicationError.html
+fi
