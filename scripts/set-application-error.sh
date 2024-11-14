@@ -27,7 +27,7 @@ printf '<html>
       <div class="row">
       <span class="brand-name">%s</span>
     </div>
-    <h1>An error has occured.</h1>
+    <h1>An error has occurred.</h1>
     <h2>You may attempt to reload the site below.</h2>
     <a href="https://%s">Reload</a>
   </body>
