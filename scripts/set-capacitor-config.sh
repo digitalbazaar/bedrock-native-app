@@ -27,7 +27,8 @@ printf '{
     "url": "https://%s",
     "allowNavigation": [
       %s
-     ]
+     ],
+    "errorPath": "applicationError.html"
   },
   "plugins": {
     "CapacitorHttp": {
